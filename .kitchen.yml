@@ -1,0 +1,23 @@
+---
+driver:
+  name: vagrant
+
+provisioner:
+  name: chef_zero
+
+platforms:
+  - name: centos-7.3
+
+verifier:
+  name: inspec
+
+suites:
+  - name: default
+    run_list:
+      - recipe[chef-yum-docker]
+      - recipe[owi_docker::docker_service]
+    verifier:
+      inspec_tests:
+        - name: centos7
+          path: ./test/integration/centos7/inspec
+    attributes:
