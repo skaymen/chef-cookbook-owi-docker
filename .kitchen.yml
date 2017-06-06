@@ -1,6 +1,10 @@
 ---
 driver:
   name: vagrant
+  box_download_insecure: true
+  customize:
+    cpus: 2
+    memory: 2048
 
 provisioner:
   name: chef_zero
@@ -14,10 +18,10 @@ verifier:
 suites:
   - name: default
     run_list:
-      - recipe[chef-yum-docker]
       - recipe[owi_docker::docker_service]
+      - recipe[owi_docker::docker_machine]
+      - recipe[owi_docker::docker_compose]
     verifier:
       inspec_tests:
         - name: centos7
           path: ./test/integration/centos7/inspec
-    attributes:

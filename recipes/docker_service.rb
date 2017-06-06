@@ -2,6 +2,8 @@
 # Cookbook Name:: owi_docker
 # Recipe:: docker_service
 
+include_recipe 'chef-yum-docker'
+
 node['owi_docker']['service'].each do |service_name, service_properties|
   docker_service service_name do
     install_method if service_properties['install_method']
