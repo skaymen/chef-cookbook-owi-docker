@@ -1,0 +1,9 @@
+.kitchen/
+.kitchen.local.yml
+.kitchen.ec2.yml
+Docker/compose.local.env
+test/integration/default/data_bags/owi_jenkins_active_directory_ec2_default/ad_bind_credentials.json
+test_local/
+test/mount_path/
+Berksfile.lock
+Gemfile.lock

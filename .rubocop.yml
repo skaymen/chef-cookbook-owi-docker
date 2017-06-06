@@ -1,0 +1,18 @@
+AllCops:
+  DisplayCopNames: true
+  Include:
+    - Berksfile
+    - Gemfile
+    - Rakefile
+    - Thorfile
+    - Guardfile
+  Exclude:
+    - vendor/**/*
+    - test/**/*
+    - spec/**/*
+
+LineLength:
+  Enabled: false
+
+Metrics/BlockLength:
+  Enabled: false
