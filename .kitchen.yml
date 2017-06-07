@@ -21,6 +21,7 @@ suites:
       - recipe[owi_docker::docker_service]
       - recipe[owi_docker::docker_machine]
       - recipe[owi_docker::docker_compose]
+      - recipe[owi_docker::users_to_docker_group]
     verifier:
       inspec_tests:
         - name: centos7

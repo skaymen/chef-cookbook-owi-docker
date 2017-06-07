@@ -5,6 +5,10 @@
 default['owi_docker']['service']['default']['install_method'] = 'package'
 default['owi_docker']['service']['default']['version'] = '17.03.1'
 
+# Users in this array will be added to the Docker group so they can use the Docker
+# engine without requiring root access
+default['owi_docker']['group']['users'] = ['vagrant']
+
 # Specify the version of Docker Machine required. Otherwise, use the
 # `default['owi_docker']['machine'][binary_location]` to specify your own binary
 # location

@@ -37,6 +37,11 @@ that can be used. When wishing to use a property from the list of properties lin
 simply add that property key to the `default['owi_docker']['service']['default']` hash
 and provide the value.
 
+Typically, Docker requires sudo access to perform commands. In order to have users
+(like jenkins or rundeck) use the Docker CLI, add those users to the `default['owi_docker']['group']['users']`
+array and run the `users_to_docker_group` recipe. This recipe obviously needs to be
+run after the Docker service is installed via the `docker_service` recipe.
+
 ### Docker Machine
 ---
 
