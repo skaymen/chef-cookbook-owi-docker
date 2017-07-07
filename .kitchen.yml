@@ -26,3 +26,16 @@ suites:
       inspec_tests:
         - name: centos7
           path: ./test/integration/centos7/inspec
+    data_path: test/files
+    attributes: {
+      "owi_docker" : {
+        "service" : {
+          "default" : {
+            "storage_driver": "overlay2",
+            "storage_opts": [
+              "overlay2.override_kernel_check=true"
+            ]
+          }
+        }
+      }
+    }
