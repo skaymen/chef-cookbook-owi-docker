@@ -5,7 +5,7 @@
 include_recipe 'chef-yum-docker'
 
 node['owi_docker']['service'].each do |service_name, service_properties|
-  docker_service service_name doi
+  docker_service service_name do
     install_method service_properties['install_method'] if service_properties['install_method']
     notifies :run, 'execute[systemctl restart docker]', :immediate
     source service_properties['source'] if service_properties['source']
